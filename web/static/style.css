@@ -26,45 +26,38 @@ background-color: turquoise;
     justify-content: center;
 
 }
-table, th, td {
-    border: 1px white;
-  }
+
 
 iframe {
   margin-top: 0px;
   width:100%;
-  height:500px;
+  height:50%;
 }
-.container {
+.tradingview-widget-container {
 position: top;
 width:100%;
+height:50%;
 margin-top:0 px;
 margin-left: 5 px;
 
 }
+ 
+div.table {
+  position: absolute;
+  width:500px;
+  top:566px;
+  left:350px;
+  height: 350px;
+  border: 3px solid turquoise;
 
-/* Bottom right text */
-.text-block {
-position: bottom;
-bottom: 20px;
-right: 20px;
-background-color:turquoise;
-color: white;
-padding-left: 20px;
-padding-right: 20px;
+} 
+div.container-2 {
+  position: absolute;
+  width:500px;
+  top:566px;
+  left:850px;
+  height: 350px;
+  border: 3px solid turquoise;
+
 } 
 
-.chart {
-position:top;
-margin-left: 5px;
-}
-
-#includedContent{
-  background-color: white;
-}
-
-section {
-  overflow: scroll;
-  width:100%;
-  height: 100%;
-}

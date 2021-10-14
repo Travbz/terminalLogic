@@ -227,8 +227,6 @@ class Algo():
       self['position'] = np.where(self.ratio < long, 1, self['position'])
       self['position'] = self['position'].ffill()
       self['entryR'] = self.position.diff()
-
-      self['market_returns'] = np.log(self["close"]).diff()
       self['range_returns'] = self['market_returns'] * self['position'].shift()
       self['sign'] = np.where(self['trend_returns'] > self['range_returns'], 1, np.nan)
       self['sign'] = np.where(self['trend_returns'] < self['range_returns'], -1, self['sign'])
