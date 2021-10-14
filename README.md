@@ -1,0 +1,2 @@
+# terminalLogic
+Algo trading playground
