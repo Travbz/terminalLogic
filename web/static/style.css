@@ -15,6 +15,12 @@ h2{
 h3{
   color:whitesmoke;
 }
+h4{
+  position:absolute;
+  left: 10px;
+  top:10px;
+  color:whitesmoke;
+}
 p{
     text-align: center;
     color: rgb(128, 120, 120);
@@ -67,11 +73,21 @@ div.container-2 {
   position: absolute;
   width:1075px;
   top:566px;
-  left:845px;
+  left:0px;
   height: 380px;
   border: 3px solid rgb(169, 94, 231);
 
 } 
+div.trade-history {
+  position: absolute;
+  width:845px;
+  top:566px;
+  left:1075px;
+  height: 380px;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+
 div.container {
   position: absolute;
   width:350px;
@@ -84,15 +100,6 @@ div.container {
 th{
   color:white;
 }
-div.container3 {
-  position: absolute;
-  width:345px;
-  top:566px;
-  left:0px;
-  height: 380px;
-  border: 3px solid rgb(169, 94, 231);
-
-} 
 div.container4 {
   position: absolute;
   width:345px;
@@ -115,4 +122,56 @@ img.current-position{
   position:absolute;
   left:0px;
   top:0px;
+}
+div.trend-test {
+  position: absolute;
+  width:100%;
+  top:55px;
+  
+  border: 3px solid rgb(169, 94, 231);
+
+}
+img#trend-test {
+  position: absolute;
+  width:100%;
+  left:0px;
+  top:0px;
+  height: 500px;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+div.trend-test2 {
+  position: absolute;
+  width:100%;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+img#trend-test2 {
+  position: absolute;
+  width:100%;
+  left:0px;
+  top:445px;
+  height: 500px;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+.rets{
+  position: absolute;
+  left:10px;
+  top:450px;
+}
+div.trend-test3 {
+  position: absolute;
+  width:100%;
+  top:110px;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+img#trend-test3 {
+  position: absolute;
+  width:100%;
+  left:0px;
+  top:50px;
+  border: 3px solid rgb(169, 94, 231);
+
 }

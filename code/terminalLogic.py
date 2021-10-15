@@ -88,6 +88,7 @@ class Algo():
     plt.plot(np.exp(self.market_returns).cumprod(),label = "Buy/Hold")
     plt.plot(np.exp(self.trend_returns).cumprod(),label = "Strat")
     plt.legend()
+    plt.savefig('../web/assets/trendRets.png')
 
   def trend_gainz(self):
 
