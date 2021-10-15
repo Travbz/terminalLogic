@@ -38,10 +38,13 @@ class Algo():
     plt.axhline(p[0], c= (.5,.5,.5), ls='--')
     plt.axhline(p[2], c= (.5,.5,.5), ls='--')
     plt.axhline(p[-1], c= (.5,.5,.5), ls='--');
+    plt.savefig('../web/assets/rangePercentiles.png')
 
   def plot_positionR(self):
     """ Plots positions takens for range algo """
     self.position.dropna().plot()
+    plt.savefig('../web/assets/rangePositions.png')
+
 
   def market_returnsR(self):
     """ Plots returns for the range algo df thus returns 'R' """
@@ -49,6 +52,8 @@ class Algo():
     plt.plot(np.exp(self['range_returns'].dropna()).cumprod(), label='Strategy')
     plt.xticks(rotation=90)
     plt.legend();
+    plt.savefig('../web/assets/rangeRets.png')
+
 
   def range_gainz(self):
 
