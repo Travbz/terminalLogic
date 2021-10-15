@@ -5,6 +5,16 @@ FTXSocket.onmessage = function (event) {
     b = message.b
     a = message.a
     console.log(message)
+    b.forEach(function(b) {
+        console.log(b)
+        var row = tbody.append("tr")        
+        Object.entries(b).forEach(function([key, value]) {
+            console.log(key, value);
+            var cell = row.append("td");
+            cell.text(value);
+
+    })
+});
 };
 let obj = {
     b: [],
@@ -16,14 +26,4 @@ let obj = {
 };
 
 
-//     asks.forEach(function(sizequantA) {
-//         console.log(sizequantA)
-//         var row = tbody.append("tr")        
-//         Object.entries(sizequantA).forEach(function([key, value]) {
-//             console.log(key, value);
-//             var cell = row.append("td");
-//             cell.text(value);
 
-//     })
-// });
-// };

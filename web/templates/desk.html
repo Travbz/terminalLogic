@@ -74,14 +74,27 @@
     </div>
   </nav>
   <section>
+    <div class="ordermanager">
+      
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+      {
+      "symbol": "FTX:BTCPERP",
+      "width": "250",
+      "colorTheme": "dark",
+      "isTransparent": false,
+      "locale": "en"
+      }
+     </script>
+    </div>
     <!-- TradingView Widget BEGIN -->
     <div class="main">
-      <div id="tradingview_dda02"></div>
+      <div class='main2'></div>
       <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
       <script type="text/javascript">
       new TradingView.widget(
       {
-      "width": 1920,
+      "width": 1340,
       "height": 510,
       "symbol": "FTX:BTCPERP",
       "interval": "D",
@@ -98,34 +111,40 @@
       </script>
     </div>
     <!-- TradingView Widget END -->
-    
     <!-- TradingView Widget BEGIN -->
-    <div class="container"></div>
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-        {
-        "interval": "1m",
-        "width": "350",
-        "isTransparent": false,
-        "height": "350",
-        "symbol": "FTX:BTCPERP",
-        "showIntervalTabs": true,
-        "locale": "en",
-        "colorTheme": "dark"
-      }
-        </script>
-      </div>
+    <div class="container3">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+      {
+      "interval": "5m",
+      "width": "340",
+      "isTransparent": false,
+      "height": "374",
+      "symbol": "FTX:BTCPERP",
+      "showIntervalTabs": true,
+      "locale": "en",
+      "colorTheme": "dark"
+    }
+      </script>
     </div>
+    </div>
+    <!-- TradingView Widget END -->
     <div class="table">
     <div id="table-area" class="table-striped">
       <table id="orderbook" class="table table-striped">
         <thead>
           <tr>
             <th class="table-head">Bid Size</th>
+            <td></td>
             <th class="table-head">BidPrice</th>
+            <td></td>
+
             <th class="table-head">Ask Price</th>
+            <td></td>
+
             <th class="table-head">Ask Size</th>
+            <td></td>
           </tr>
         </thead>
         <tbody></tbody>
@@ -133,9 +152,13 @@
     </div>
     </div>
     <div class="container-2">
+      <h3>This is a visualization of terminalLogic's current open position long==green, short==red.</h3>
+      <img class='current-position' src="../assets/dualPlot.png" >
+     </div>
+     
 
-      
-    </div>
+<!-- TradingView Widget END -->
+
   </section>
 <!-- TradingView Widget END -->
   <!-- <script src='chart.js'></script> -->
