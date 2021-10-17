@@ -31,10 +31,7 @@
             <a class="nav-link active" aria-current="page" href="desk.html">The Desk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="blog.html">Blog</a>
+            <a class="nav-link" aria-current="page" href="portfolio.html">Portfolio</a>
           </li>
           <!-- ML Dropdown -->
           <li class="nav-item dropdown">
@@ -58,6 +55,9 @@
               <li><a class="dropdown-item" href="ml.html">USERS.csv</a></li>
             </ul>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="api.html">FTX API</a>
             </li>   
           </li>  
@@ -74,38 +74,29 @@
       </div>
     </div>
   </nav>
-  <div class='container4'>
-    
+  <div class='zscoreBox'>
   </div>
-  <table>
-    <tr>
-      <th>BTC-PERP</th>
-      <th>HOLDINGS</th>
-      <th>CASH</th>
-      <th>TOTAL</th>
-      <th>RETURNS</th>
-      <th>START-TIME</th>
-
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-    </tr>
+  <table id='portfolioPerf'>
+    <thead>
+      <tr>
+        <th class="portfolioPerf">Index</th>
+        <th class="portfolioPerf">BTC-PERP</th>
+        <th class="portfolioPerf">Holdings</th>
+        <th class="portfolioPerf">Cash</th>
+        <th class="portfolioPerf">Total</th>
+        <th class="portfolioPerf">Returns</th>
+        <th class="portfolioPerf">Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
   </table>
-  <script type="text/javascript" src="../webData/portfolio.json"></script>
-
+  <div class="portfolioIMG">
+    <h6 class='portfolioH6'>Portfolio Performance Over Time</h6>
+    <img class="portfolioIMG" src="../assets/portfolioStandings.png">
+  </div>
+  <div class='zscoreBox'>
+    <h4 class='zscore'>Portfolio Z-Score: {{Z_scoreDual}}</h4>
+  </div>
   <script src="../static/folio.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

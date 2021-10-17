@@ -35,7 +35,9 @@ class Algo():
     y = self.iloc[-500:]['time']
     percentiles = [5, 10, 50, 90, 95]
     p = np.percentile(self['ratio'].dropna(), percentiles)
-    plt.plot(y,self.iloc[-500:]['ratio'].dropna())
+    plt.xticks(fontsize=22)
+    plt.yticks(fontsize=22)
+    plt.plot(self.iloc[-500:]['ratio'].dropna())
     plt.axhline(p[0], c= (.5,.5,.5), ls='--')
     plt.axhline(p[2], c= (.5,.5,.5), ls='--')
     plt.axhline(p[-1], c= (.5,.5,.5), ls='--')
@@ -44,12 +46,16 @@ class Algo():
   def plot_positionR(self):
     """ Plots positions takens for range algo """
     fig = plt.figure(facecolor=(1, 1, 1))
+    plt.xticks(fontsize=22)
+    plt.yticks(fontsize=22)
     self.position.dropna().plot()
     plt.savefig('../web/assets/rangeStatus.png')
 
 
   def market_returnsR(self):
       fig = plt.figure(facecolor=(1, 1, 1))
+      plt.xticks(fontsize=22)
+      plt.yticks(fontsize=22)
       plt.plot(np.exp(self.iloc[-500:]['market_returns'].dropna()).cumprod(), label='Buy/Hold')
       plt.plot(np.exp(self.iloc[-500:]['range_returns'].dropna()).cumprod(), label='Strategy')
       plt.xticks(rotation=90)
@@ -81,9 +87,11 @@ class Algo():
     """Plots long short flips on line chart for trend algo 'T' """
     plt.rcParams['figure.figsize'] = 30,10
     plt.grid(True, alpha = .3)
+    plt.xticks(fontsize=22)
+    plt.yticks(fontsize=22)
     y=self.iloc[-500:]['time']
-    plt.plot(y , self.iloc[-500:]['close'], label = 'BTC')
-    plt.plot(y , self.iloc[-500:]['9-min'], label = '9-min')
+    plt.plot(self.iloc[-500:]['close'], label = 'BTC')
+    plt.plot(self.iloc[-500:]['9-min'], label = '9-min')
     plt.plot(self.iloc[-500:]['21-min'], label = '21-min')
     plt.plot(self[-500:].loc[self.entry == 2].index, self[-500:]['9-min'][self.entry == 2], "^",
             color = "g", markersize = 12, label= "Long")
