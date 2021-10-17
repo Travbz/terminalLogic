@@ -32,27 +32,29 @@ class Algo():
     import matplotlib.pyplot as plt
     import seaborn as sb
     sb.set()
+    y = self.iloc[-500:]['time']
     percentiles = [5, 10, 50, 90, 95]
     p = np.percentile(self['ratio'].dropna(), percentiles)
-    self['ratio'].dropna().plot(legend = True)
+    plt.plot(y,self.iloc[-500:]['ratio'].dropna())
     plt.axhline(p[0], c= (.5,.5,.5), ls='--')
     plt.axhline(p[2], c= (.5,.5,.5), ls='--')
-    plt.axhline(p[-1], c= (.5,.5,.5), ls='--');
+    plt.axhline(p[-1], c= (.5,.5,.5), ls='--')
     plt.savefig('../web/assets/rangePercentiles.png')
 
   def plot_positionR(self):
     """ Plots positions takens for range algo """
+    fig = plt.figure(facecolor=(1, 1, 1))
     self.position.dropna().plot()
-    plt.savefig('../web/assets/rangePositions.png')
+    plt.savefig('../web/assets/rangeStatus.png')
 
 
   def market_returnsR(self):
-    """ Plots returns for the range algo df thus returns 'R' """
-    plt.plot(np.exp(self['market_returns'].dropna()).cumprod(), label='Buy/Hold')
-    plt.plot(np.exp(self['range_returns'].dropna()).cumprod(), label='Strategy')
-    plt.xticks(rotation=90)
-    plt.legend();
-    plt.savefig('../web/assets/rangeRets.png')
+      fig = plt.figure(facecolor=(1, 1, 1))
+      plt.plot(np.exp(self.iloc[-500:]['market_returns'].dropna()).cumprod(), label='Buy/Hold')
+      plt.plot(np.exp(self.iloc[-500:]['range_returns'].dropna()).cumprod(), label='Strategy')
+      plt.xticks(rotation=90)
+      plt.legend()
+      plt.savefig('../web/assets/rangeRets.png')
 
 
   def range_gainz(self):
@@ -79,14 +81,16 @@ class Algo():
     """Plots long short flips on line chart for trend algo 'T' """
     plt.rcParams['figure.figsize'] = 30,10
     plt.grid(True, alpha = .3)
-    plt.plot(self.iloc[-500:]['close'], label = 'BTC')
-    plt.plot(self.iloc[-500:]['9-min'], label = '9-min')
+    y=self.iloc[-500:]['time']
+    plt.plot(y , self.iloc[-500:]['close'], label = 'BTC')
+    plt.plot(y , self.iloc[-500:]['9-min'], label = '9-min')
     plt.plot(self.iloc[-500:]['21-min'], label = '21-min')
     plt.plot(self[-500:].loc[self.entry == 2].index, self[-500:]['9-min'][self.entry == 2], "^",
             color = "g", markersize = 12, label= "Long")
     plt.plot(self[-500:].loc[self.entry == -2].index, self[-500:]['21-min'][self.entry == -2], "v",
             color = "r", markersize = 12, label="Short")
     plt.legend(loc=2);
+    plt.savefig('../web/assets/trendPositions.png')
 
   def plot_gainzT(self):
     self['trend_returns'] = self.signal * self.market_returns

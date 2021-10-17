@@ -74,10 +74,41 @@
       </div>
     </div>
   </nav>
-  <div class='gist'
-  <h1>Here is the ML set up to detect market state and send signals to the other stack</h1>
-  <script class='gist1' src="https://gist.github.com/Travbz/743f79c0e2c6f44c196b6ef07a13f1fe.js"></script>      <!-- <div class='container' id="visual"> -->
-
+  <h3 class="ml-h3">Unsupervised Machine Learning Lasso Regression Clustering </h3>
+  <div class="ml-test">
+    <img id="ml-test" src="../assets/train-test-error.png">
+    <div class="text-block">
+    </div>
+  <div class='ml-text'>
+    <ul>
+      <h5 class='ml-text-list' >This graph looks pretty good to me. Without actually looking at the factors based on which the classification was done, we can conclude a few things just by looking at the chart.
+      </li>
+      <li class='ml-text-list' >1. The blue zone is the low volatility or the sideways zone
+      </li>   
+      <li class='ml-text-list' >2. The orange zone is high volatility zone or panic zone.
+      </li>   
+      <li class='ml-text-list' >3. The purple zone is a breakout up/down zone.
+      </li>   
+      <li class='ml-text-list' >4. The red zone: high Mean, high covariance zone.
+      </li>   
+      <li class='ml-text-list' >5. The purple zone mid mean low covariance i really have no clue besided looks toppy and rangey
+      </li>   
+      <li class='ml-text-list' >* Use the code below to print the relevant data for each regime</li>         
+    </ul>
+  </div>
+  <div class="ml-error">
+    <h5 class="error">If our algorithm is doing better in the test data compared to the train data, is this observation in itself a red flag.?</h5>
+    <h5 class="error">There are a few reasons why our test data error could be better than the train data error:</h5>
+    <ul class="error">
+      <li>If the train data had greater volatility (Daily range) compared to the test set, then the prediction would also exhibit greater volatility.</li>
+      <li>If there was an inherent trend in the market that helped the algo make better predictions.</li>
+    </ul>
+  </div>
+  <div class='ml-test2'>
+    <img id="ml-test2" src="../assets/lasso.png">
+    <div class="text-block">
+    </div>
+  </div>
   <!-- <script src='chart.js'></script> -->
   <script src="orderbooks.js"></script>
   <!-- Bootstrap JS -->
