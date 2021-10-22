@@ -1,0 +1,270 @@
+header {
+  display: flex;
+  width: 100%;
+  /* background: #2b2f3a; */
+  /* background: rgb(27, 27, 27); */
+  background: rgb(19, 23, 34);
+  box-shadow: rgb(57, 57, 57) 0px 10px 10px -10px;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+.logo {
+  color: white;
+  padding: 0 2rem;
+  font-size: 3rem;
+}
+.container {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.flexnav,
+.flexnav ul {
+  list-style: none;
+  margin: 0;
+}
+.flexnav,
+.menu-button {
+  font-family: Lato, Helvetica, sans-serif;
+  line-height: 1;
+}
+.flexnav {
+  padding: 0;
+  display: block;
+  overflow: visible;
+  width: 100%;
+}
+.flexnav > li > a,
+.menu-button {
+  padding: 18px 22px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.flexnav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.menu-button {
+  display: none;
+  /* color: #7a8189; */
+
+  cursor: pointer;
+}
+.flexnav > li {
+  float: left;
+  display: block;
+  position: relative;
+}
+.flexnav li a {
+  /* color: #7a8189; */
+  color: #fff;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.flexnav > li > a {
+  display: block;
+  font-weight: 300;
+  text-decoration: none;
+}
+.flexnav li a:hover {
+  transform: scale(1.01);
+}
+.flexnav > .item-with-ul > a {
+  padding-right: 66px;
+}
+touch-button {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 54px;
+  height: 54px;
+  z-index: 99;
+  cursor: pointer;
+  background: 0 0;
+}
+.touch-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #7a8189;
+  right: 13px;
+  top: 13px;
+  border-radius: 23px;
+}
+.touch-button::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-bottom: 1px solid #7a8189;
+  border-left: 1px solid #7a8189;
+  right: 21px;
+  top: 20px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.flexnav li:hover > .touch-button::before,
+.sm-screen .submenu-open::before {
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+}
+.flexnav li:hover > .touch-button::after,
+.sm-screen .submenu-open::after {
+  border-color: #fff;
+}
+.flexnav ul {
+  position: absolute;
+  left: 0;
+  padding: 0;
+}
+.flexnav ul ul {
+  left: 244px;
+  top: -1px;
+}
+.flexnav ul li {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #31353f;
+}
+.flexnav ul li a {
+  background: rgb(19, 23, 34);
+  padding: 12px 22px;
+  display: block;
+  width: 200px;
+  font-size: 15px;
+  text-decoration: none;
+}
+.flexnav ul .touch-button {
+  width: 40px;
+  height: 40px;
+  border-left: 1px solid #31353f;
+}
+.flexnav ul .touch-button::after {
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+}
+.flexnav ul .touch-button::before {
+  right: 17px;
+  top: 16px;
+  height: 7px;
+  width: 7px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+@media all and (max-width: 1100px) {
+  .flexnav {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .flexnav > li > a,
+  .menu-button {
+    padding: 18px 12px;
+  }
+  @media all and (max-width: 1100px) {
+    header {
+      flex-direction: row;
+    }
+    .logo {
+      font-size: 2.5rem;
+      position: fixed;
+      top: 1rem;
+    }
+    .flexnav {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+    }
+    .flexnav.show {
+      overflow: visible;
+      max-height: 3000px;
+    }
+    .flexnav li {
+      float: none;
+    }
+    .flexnav ul li a {
+      width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    .flexnav > li {
+      border-top: 1px solid #31353f;
+    }
+    .flexnav ul,
+    .flexnav ul ul {
+      position: relative;
+      left: 0;
+      width: 100%;
+    }
+    .flexnav.show .touch-button,
+    .menu-button .touch-button {
+      border-left: 1px solid #31353f;
+      z-index: 999;
+    }
+    .flexnav ul .touch-button::before {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      right: 16px;
+      top: 15px;
+    }
+    .menu-button {
+      display: block;
+    }
+    .menu-button .touch-button::before {
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+      border-left: 0;
+      border-top: 2px solid #7a8189;
+      border-bottom: 2px solid #7a8189;
+      height: 2px;
+      width: 12px;
+      top: 22px;
+    }
+    .menu-button::after {
+      display: block;
+      width: 12px;
+      height: 2px;
+      content: "";
+      position: absolute;
+      background: #7a8189;
+      right: 21px;
+      top: 30px;
+    }
+    .flexnav ul ul li a {
+      padding-left: 62px;
+    }
+    .flexnav ul ul ul li a {
+      padding-left: 82px;
+    }
+  }
+}
