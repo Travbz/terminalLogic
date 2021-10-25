@@ -9,7 +9,7 @@ section {
 }
 .btc-chart {
   width: 80%;
-  height: 511px;
+  height: 30%;
 }
 .upper-right {
   height: 100%;
@@ -37,8 +37,8 @@ section {
   font-size: 3rem;
 }
 .current-position {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 15%;
 }
 footer {
   width: 90% !important;

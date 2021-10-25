@@ -4,28 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="../static/css/portfolio.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/global.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/nav.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+  <link rel="stylesheet" href="../static/css/rangetests.css">
+  <link rel="stylesheet" href="../static/css/nav.css">
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
 </head>
-<body> 
+<body>
   <!-- NAVBAR -->
   <header>
-    <a href="index.html" class="logo">terminalLogic</a>
+    <div class="logo_container">
+      <a href="dashboard.html" class="logo">terminalLogic</a>
+    </div>
     <div class="container">
       <div class="menu-button"></div>
       <ul class="flexnav" data-breakpoint="800">
-        <li><a href="dashboard.html">The Desk</a></li>
+        <li><a href="desk.html">The Desk</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html">News</a></li>
         <li>
           <a href="#">Backtesting</a>
           <ul>
-            <li><a classname="subnav" href="#">Visualizing Momentum</a></li>
-            <li><a classname="subnav" href="#">Visualizing Mean Reversion</a></li>
-            <li><a classname="subnav" href="#">Machine Learning</a></li>
+            <li><a classname="subnav" href="trendtests.html">Visualizing Momentum</a></li>
+            <li><a classname="subnav" href="rangetests.html">Visualizing Mean Reversion</a></li>
+            <li><a classname="subnav" href="ml.html">Machine Learning</a></li>
           </ul>
         </li>
         <li>
@@ -37,96 +38,34 @@
           </ul>
         </li>
         <li><a href="api.html">FTX API</a></li>
-        <li><a href="../templates/Web-GUI-for-SQLite/Web-GUI-for-SQLite.html">Admin</a></li>
         <li><a href="https://ftx.us/trade/BTC/USD" target="_blank" rel="noopener noreferrer" >FTX Official Site</a></li>
         <li><a href="https://github.com/Travbz?tab=repositories" target="_blank" rel="noopener noreferrer" >Github</a></li>
       </ul>
     </div>
 </header>
 <!-- NAVBAR Ended -->
-<main class="portfolio">
-  <div class="portfolio_section">
-    <table class="portfolio_table">
-      <thead>
-        <tr>
-          <th><h1>Index</h1></th>
-          <th><h1>BTC-PERP</h1></th>
-          <th><h1>Holdings</h1></th>
-          <th><h1>Cash</h1></th>
-          <th><h1>Total</h1></th>
-          <th><h1>Returns</h1></th>
-          <th><h1>Time</h1></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Google</td>
-          <td>9518</td>
-          <td>6369</td>
-          <td>01:32:50</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Twitter</td>
-          <td>7326</td>
-          <td>10437</td>
-          <td>00:51:22</td><td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Amazon</td>
-          <td>4162</td>
-          <td>5327</td>
-          <td>00:24:34</td><td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>link</td>
-          <td>3654</td>
-          <td>2961</td>
-          <td>00:12:10</td><td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Code</td>
-          <td>2002</td>
-          <td>4135</td>
-          <td>00:46:19</td><td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>GitHub</td>
-          <td>4623</td>
-          <td>3486</td>
-          <td>00:31:52</td><td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="portfolio_image">
-      <h6 class='portfolio_image_header'>Portfolio Performance Over Time</h6>
-      <img class="portfolio_img" src="../assets/portfolioStandings.png">
+  <main class="rangetests">
+    <div class="range-test">
+      <h3>Trend Algo suggested position entries/exits</h3>
+      <div class="range-test_img">
+          <img src="../assets/trendPositions.png" alt="range percentile">
+      </div>
     </div>
-  </div>
-  <div class='zscoreBox'>
-    <h4 class='zscore'>Portfolio Z-Score: {{Z_scoreDual}}</h4>
-  </div>
-</main>
-<footer>
-  <p id="footer">Travis Bridle</p>
-</footer>
-</body>
-<!-- SCRIPTS -->
-<script src="../static/folio.js"></script>
-<script src="https://0.s3.envato.com/files/78833207/js/jquery-1.9.0.min.js"></script>
-  <script src="https://0.s3.envato.com/files/78833207/js/jquery.flexnav.js"></script>
+    <div class="range-test">
+      <h3>Trend Algo market performance based on suggested position entries/exits</h3>
+      <div class="range-test_img">
+          <img src="../assets/trendRets.png" alt="range percentile">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p id="footer">Travis Bridle</p>
+  </footer>
+      </body>
+      <script src="orderbooks.js"></script>
+        <!-- SCRIPTS -->
+    <script src="https://0.s3.envato.com/files/78833207/js/jquery-1.9.0.min.js"></script>
+    <script src="https://0.s3.envato.com/files/78833207/js/jquery.flexnav.js"></script>
   <script>
     $(".flexnav").flexNav();
   </script>
