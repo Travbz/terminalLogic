@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../static/dataTable.js"></script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/data.css">
     <link rel="stylesheet" href="../static/css/nav.css" />
     <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/footer.css">
+
     <!-- ADD YOUR CSS -->
   </head>
   <body>
@@ -29,8 +35,9 @@
         <li>
           <a href="#">Data</a>
           <ul>
-            <li><a classname="subnav" href="data.html">BTCPERP-1M</a></li> 
+            <li><a classname="subnav" href="data.html">BTCPERP-1M</a></li>
             <li><a classname="subnav" href="Web-GUI-for-SQLite/Web-GUI-for-SQLite.html">SQLite3</a></li>
+
           </ul>
         </li>
         <li><a href="api.html">FTX API</a></li>
@@ -41,6 +48,35 @@
 </header>
 <!-- WRITE YOUR CODE HERE -->
 
+<main class="portfolio">
+    <div class="portfolio_section">
+      <table class="portfolio_table">
+        <thead>
+          <tr>
+            <th><h1>time</h1></th>
+            <th><h1>open</h1></th>
+            <th><h1>high</h1></th>
+            <th><h1>low</h1></th>
+            <th><h1>close</h1></th>
+            <th><h1>volume</h1></th>
+            <th><h1>9-min</h1></th>
+            <th><h1>21-min</h1></th>
+            <th><h1>signal</h1></th>
+            <th><h1>market_returns</h1></th>
+            <th><h1>trend_returns</h1></th>
+            <th><h1>entry</h1></th>
+            <th><h1>ma</h1></th>
+            <th><h1>ratio</h1></th>
+            <th><h1>position</h1></th>
+            <th><h1>enrtyR</h1></th>
+            <th><h1>range_returns</h1></th>
+            <th><h1>sign</h1></th>
+
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+</main>
 
 <!-- WRITE YOUR CODE ABOVE -->
   </body>
