@@ -48,68 +48,28 @@
 </header>
   <!-- NAVBAR Ended -->
   </div>
-  <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "description": "",
-        "proName": "FTX:BTCUSD"
-      },
-      {
-        "description": "",
-        "proName": "FTX:BTCPERP"
-      },
-      {
-        "description": "",
-        "proName": "FTX:ETHUSD"
-      },
-      {
-        "description": "",
-        "proName": "FTX:ADAPERP"
-      },
-      {
-        "description": "",
-        "proName": "FTX:AVAXPERP"
-      },
-      {
-        "description": "",
-        "proName": "FTX:SOLPERP"
-      }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "dark",
-    "isTransparent": false,
-    "displayMode": "adaptive",
-    "locale": "en"
-  }
-    </script>
-  <!-- <div class="dashbox">
 
-  </div> -->
-  </div>
-  <!-- TradingView Widget END -->
 
   <div class="architecture">
     <ul>
+      <li><h1>Architecture and Summary</h1></li>
       <li class='intro' >AWS cloud based EC2, 30GB RAM, windows-instance virtual machine </li>   
-      <li class='intro' >Fully automated cryptocurrency derivitives trading engine</li>
+      <li class='intro' >Partially automated cryptocurrency derivitives trading engine</li>
       <li class='intro' >Send/Recieve Websocket and REST API messages @ FTX Exchange</li> 
-      <li class='intro' >Streaming tick data resampled and transformed into ohlc on the fly</li>     
-      <li class='intro' >fully backed up time series data in a SQLite database</li>
-      <li class='intro' >Machine learning algo optimization</li>
-      <li class='intro' >Multiple classes/functions running on a scheduler</li>
+      <li class='intro' >Streaming data ETL</li>     
+      <li class='intro' >Time series SQLite database</li>
+      <li class='intro' >Trading strategy optimization via random forest machine learning</li>
+      <li class='intro' >Backtesting</li>
+      <li class='intro' >Scheduled jobs</li>
       <li class='intro' >Custom UI</li>
-      <li class='intro' >Coming Soon: Integration of webhooks, multiple api calls across more exchanges,
+      <li class='intro' >Price data feeds</li>
+      <li class='intro' ><h1>Coming Soon once in alpha testing:</h1> Integration of webhooks, email and sms notifications, multiple api calls across more exchanges,
          adding multiple instruments, SQLite CRUD operations for all assets on terminal, custom order types.</li>
-      <li class='intro' >"Prefer composition to inheritance, terminalLogic neither requires nor encourages inheritance"</li>
 
 
     </ul>
     <div class="architecture_image">
-      <img id="architecture" src="..\assets\architectureDark.png">
+      <img id="architecture" src="..\assets\logicanimation.gif">
     </div>
   </div>
   <!-- <div>

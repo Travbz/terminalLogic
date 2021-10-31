@@ -253,3 +253,37 @@ class Algo():
         self['sign'] = np.where(self['trend_returns'] <
                                 self['range_returns'], -1, self['sign'])
         return self
+
+
+    def folio(self) -> pd.DataFrame:
+        self['just_date'] = self['time'].dt.date
+        #column for negative and positive
+        self=self.dropna()
+        self['rangeSign'] = np.where(self['range_returns'] < 0, 'neg','pos')
+        self['trendSign'] = np.where(self['trend_returns'] < 0, 'neg','pos')
+
+        #consecutive groups
+        self['rangeSeries'] = self['rangeSign'].ne(self['rangeSign'].shift()).cumsum()
+        self['trendSeries'] = self['trendSign'].ne(self['trendSign'].shift()).cumsum()
+
+        #removed groups with length more like 2
+        df = self[self['rangeSeries'].map(self['rangeSeries'].value_counts()).gt(2)]
+        df = self[self['trendSeries'].map(self['trendSeries'].value_counts()).gt(2)]
+
+        #tested if order `pos-neg` of groups, if not removed groups
+        m1 = df['rangeSign'].eq('pos') & df['rangeSign'].shift(-1).eq('neg')
+        m2 = df['rangeSign'].eq('neg') & df['rangeSign'].shift().eq('pos')
+        m3 = df['trendSign'].eq('pos') & df['trendSign'].shift(-1).eq('neg')
+        m4 = df['trendSign'].eq('neg') & df['trendSign'].shift().eq('pos')
+        groupsR = df.loc[m1 | m2, 'rangeSeries']
+        df = df[df['rangeSeries'].isin(groupsR)].copy()
+        df['rangePairs'] = (df['rangeSign'].ne(df['rangeSign'].shift()) & df['rangeSign'].eq('pos')).cumsum()
+        groupsT = df.loc[m3 | m4, 'trendSeries']
+        df = df[df['trendSeries'].isin(groupsT)].copy()
+        df['trendPairs'] = (df['trendSign'].ne(df['trendSign'].shift()) & df['trendSign'].eq('pos')).cumsum()
+        rangeTradeCounts = df['rangeSeries'].nunique()
+        trendTradeCounts = df['trendSeries'].nunique()
+        totalTrades = rangeTradeCounts + trendTradeCounts
+        return df
+
+        

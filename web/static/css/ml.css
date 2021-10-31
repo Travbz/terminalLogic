@@ -40,9 +40,14 @@
   width: 100%;
 }
 #graph-img-2 {
+  width: 70%;
+}
+#graph-img-3 {
   width: 100%;
 }
-
+#graph-img-4 {
+  width: 100%;
+}
 @media only screen and (min-width: 2000px) {
   .ml {
     justify-content: center;

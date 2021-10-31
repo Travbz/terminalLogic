@@ -49,18 +49,23 @@
     <h1 class="ml_heading">Unsupervised Machine Learning Lasso Regression Clustering</h1>
     <div class="ml_section">
       <div class="ml_image">
-        <img id="graph-img-1" src="../assets/train-test-error.png">
+        <img id="graph-img-1" src="../assets/lasso-error.png">
       </div>
       <div class="ml_text"> 
         <div class="ml_text_heading">
-          <h3>If our algorithm is doing better in the test data compared to the train data, is this observation in itself a red flag.?</h3>
-          <h3>There are a few reasons why our test data error could be better than the train data error:</h3>
+          <h3>I created a new Range value to hold the average minute trading range of the asset.</h3>
+          <h3>It is a metric that I would like to compare with when I am making a prediction. 
+            The logic behind this comparison is that if my prediction error is more than the minutes range,
+             then it is likely that it will not be useful.</h3>
+          <h3>What does this scatter plot tell you? Let me ask you a few questions..</h3>
         </div>
         <ul class="ml_text_list">
-            <li>If the train data had greater volatility (Daily range) compared to the test set, then the prediction would also exhibit greater volatility.</li>
-            <li>If there was an inherent trend in the market that helped the algo make better predictions.</li>
+            <li>Is the equation over-fitting?</li>
+            <li>The performance of the data improved remarkably as the train data set size increased. Does this mean if we give more data the error will reduce further?</li>
+            <li>Is there an inherent trend in the market, allowing us to make better predictions as the data set size increases?</li>
         </ul>
         </div>
+  
     </div>
     <div class="ml_section">
         <div class="ml_text"> 
@@ -69,14 +74,47 @@
             <h3>There are a few reasons why our test data error could be better than the train data error:</h3>
           </div>
           <ul class="ml_text_list">
-              <li>If the train data had greater volatility (Daily range) compared to the test set, then the prediction would also exhibit greater volatility.</li>
+              <li>If the train data had greater volatility (minute range) compared to the test set, then the prediction would also exhibit greater volatility.</li>
               <li>If there was an inherent trend in the market that helped the algo make better predictions.</li>
           </ul>
           </div>
           <div class="ml_image">
-            <img id="graph-img-2" src="../assets/lasso.png">
+            <img id="graph-img-3" src="../assets/train-test-error.png">
           </div>
     </div>
+    <div class="ml_section">
+      <div class="ml_text"> 
+        <div class="ml_text_heading">
+          <h3>This graph looks pretty good to me. Without actually looking at the factors based on which the classification was done,
+             we can conclude a few things just by looking at the chart</h3>
+
+        </div>
+        <ul class="ml_text_list">
+          <h3>***Colors and values subject to change each time the kernal is restarted</h3>
+            <li>Blue looks like a mean reverting zone, less volitlity</li>
+            <li>Orange looks like a breakout zone, lots of momentum and volitility</li>
+            <li>Green zone is high mean low covariance, possible indicitive of a trend reversal?</li>
+            <h2>Can we use lasso regression to detect market regime so we can conditionally impliment different trading strategies?</h2>
+            <h1>YES WE CAN!!!!!</h1>
+          </ul>
+        </div>
+        <div class="ml_image">
+          <img id="graph-img-1" src="../assets/lasso.png">
+        </div>
+  </div>
+  <h1 class="ml_heading">Random Forest Machine Learning, algo optimization</h1>
+  <div class="ml_section">
+      <div class="ml_image">
+        <img id="graph-img-4" src="../assets/forest.jpg">
+      </div>
+</div>
+<div class="ml_text_heading">
+  <h1>Free conditional logic to research as potential ways to optimize current trading logic.</h3>
+  <h2>By adding/removing the suggestion of a root node, we may decrease trades taken but increase profits.</h2>
+  <h2>This is so powerful i really cant believe a sub 1 year dev can even use it</h2>
+  <h3>Blue leaf nodes indicate successful trades</h3>
+
+</div>
 </main>
 <footer>
   <footer>
