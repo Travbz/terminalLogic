@@ -121,6 +121,7 @@
     font-size: 1.5rem;
   }
   .portfolio_img {
+  
     transform: scale(1.2);
   }
   .portfolio_table td,

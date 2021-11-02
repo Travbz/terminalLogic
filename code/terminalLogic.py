@@ -1,9 +1,28 @@
 import pandas as pd
 import numpy as np
 import time
+import seaborn as sb
 import requests
 import matplotlib.pyplot as plt
-
+from pandas_datareader import data as web
+from sklearn.linear_model import Lasso
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import RandomizedSearchCV as rcv
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean') 
+import matplotlib.pyplot as plt
+from IPython import get_ipython
+import matplotlib.pyplot as plt
+from typing import Optional, Dict, Any, List
+from ciso8601 import parse_datetime
+from requests import Request, Session, Response
+import sys
+import hmac
+import urllib.parse
+import datetime
+import sqlite3
+import csv
 
 class Algo():
 
@@ -27,9 +46,8 @@ class Algo():
         return self
 
     def plot_percentiles(self):
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
         """ Plots price percenitles"""
-        import matplotlib.pyplot as plt
-        import seaborn as sb
         sb.set()
         y = self.iloc[-500:]['time']
         percentiles = [5, 10, 50, 90, 95]
@@ -43,14 +61,18 @@ class Algo():
         plt.savefig('../web/assets/rangePercentiles.png')
 
     def plot_positionR(self):
-        """ Plots positions takens for range algo """
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
+
         fig = plt.figure(facecolor=(1, 1, 1))
+        y=self.iloc[-500:]['time']
         plt.xticks(fontsize=22)
         plt.yticks(fontsize=22)
-        self.position.dropna().plot()
+        plt.plot(self.iloc[-500:]['position'].dropna())
         plt.savefig('../web/assets/rangeStatus.png')
 
     def market_returnsR(self):
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
+
         fig = plt.figure(facecolor=(1, 1, 1))
         plt.xticks(fontsize=22)
         plt.yticks(fontsize=22)
@@ -61,6 +83,18 @@ class Algo():
         plt.xticks(rotation=90)
         plt.legend()
         plt.savefig('../web/assets/rangeRets.png')
+
+
+    def nineM(self):
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
+        fig = plt.figure(facecolor=(1, 1, 1))
+        y=self.iloc[-500:]['time']
+        plt.xticks(fontsize=22)
+        plt.yticks(fontsize=22)
+        plt.plot(self.iloc[-500:]['close'], label = 'BTC')
+        plt.plot(self.iloc[-500:]['9-min'], label = '9-min')
+        plt.legend(loc=2);
+        plt.savefig('../web/assets/btc1m9ma.png')
 
     def range_gainz(self):
 
@@ -85,6 +119,7 @@ class Algo():
         return self
 
     def plot_positionT(self):
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
         """Plots long short flips on line chart for trend algo 'T' """
         plt.rcParams['figure.figsize'] = 30, 10
         plt.grid(True, alpha=.3)
@@ -99,12 +134,17 @@ class Algo():
         plt.plot(self[-500:].loc[self.entry == -2].index, self[-500:]['21-min'][self.entry == -2], "v",
                  color="r", markersize=12, label="Short")
         plt.legend(loc=2)
-        plt.savefig('../web/assets/trendPositions.png')
+        plt.savefig('../web/assets/trendPositions1.png')
 
     def plot_gainzT(self):
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
+        fig = plt.figure(facecolor=(1, 1, 1))
+        y=self.iloc[-500:]['time']
         self['trend_returns'] = self.signal * self.market_returns
-        plt.plot(np.exp(self.market_returns).cumprod(), label="Buy/Hold")
-        plt.plot(np.exp(self.trend_returns).cumprod(), label="Strat")
+        plt.xticks(fontsize=22)
+        plt.yticks(fontsize=22)
+        plt.plot(np.exp(self.iloc[-500:]['market_returns']).cumprod(),label = "Buy/Hold")
+        plt.plot(np.exp(self.iloc[-500:]['trend_returns']).cumprod(),label = "Strat")
         plt.legend()
         plt.savefig('../web/assets/trendRets.png')
 
@@ -114,6 +154,24 @@ class Algo():
             self.market_returns).cumprod().iloc[-1])
         print("Trend Strategy Returns: ", np.exp(
             self.trend_returns).cumprod().iloc[-1])
+
+    def dualPlot(self):
+        fig = plt.figure(facecolor=(1, 1, 1))
+        y=self.iloc[-500:]['time']
+        plt.xticks(fontsize=22)
+        plt.yticks(fontsize=22)
+        plt.plot(self.iloc[-500:]['close'], label = 'BTC')
+        plt.plot(self.iloc[-500:]['9-min'], label = '9-min')
+        plt.plot(self[-500:].loc[self.entryR == 2].index, self[-500:]['9-min'][self.entryR == 2], "^",
+                color = "r", markersize = 12, label= "Short")
+        plt.plot(self[-500:].loc[self.entryR == -2].index, self[-500:]['9-min'][self.entryR == -2], "v",
+                color = "g", markersize = 12, label="Long")
+        plt.legend(loc=2);
+        plt.savefig('../web/assets/dualPlot.png')
+
+
+
+
 
     def Z_scoreR(self, df) -> pd.DataFrame:
         '''Args, needs col 'strat_return with +/- returns'''
@@ -254,9 +312,7 @@ class Algo():
                                 self['range_returns'], -1, self['sign'])
         return self
 
-
     def folio(self) -> pd.DataFrame:
-        self['just_date'] = self['time'].dt.date
         #column for negative and positive
         self=self.dropna()
         self['rangeSign'] = np.where(self['range_returns'] < 0, 'neg','pos')
@@ -284,6 +340,147 @@ class Algo():
         rangeTradeCounts = df['rangeSeries'].nunique()
         trendTradeCounts = df['trendSeries'].nunique()
         totalTrades = rangeTradeCounts + trendTradeCounts
-        return df
-
+        df['just_date'] = df['time'].dt.date
+        df['just_date']
+        # Set initial capital
+        initial_capital = float(22000.0)
+        # Create df positions
+        positions = pd.DataFrame(index=df.time.index).fillna(0.0)
+        # Buy 2 BTC
+        positions['BTCPERP'] = 1*df['signal']
+        # Initilize portfolio w value owned
+        portfolio = positions.multiply(df['close'], axis=0)
+        # Store diff in shares owned
+        pos_diff = positions.diff()
+        # Add 'holdings' to portfolio
+        portfolio['holdings'] = (positions.multiply(df['close'], axis=0)).sum(axis=1)
+        # Add 'cash' to portfolio
+        portfolio['cash'] = initial_capital - (pos_diff.multiply(df['close'], axis=0)).sum(axis=1).cumsum()
+        # Add 'total' to portfolio
+        portfolio['total'] = portfolio['cash'] + portfolio['holdings']
+        # Add 'returns' to portfolio
+        portfolio['returns'] = portfolio['total'].pct_change()
+        portfolio['time'] = df['time']
+        p = portfolio[-1:]
+        p.drop(columns=['time'], inplace=True)
+        p = p.reset_index(drop=True)
+        p.to_json('../web/templates/portfolio2.json', orient='records')
+        fig = plt.figure(facecolor=(1, 1, 1))
+        x = portfolio.iloc[-200:]['time']
+        y = portfolio.iloc[-200:]['total']
+        plt.xticks(fontsize=22, color="black", rotation=25)
+        plt.xlabel('Time', color='black',fontsize=22)
+        plt.yticks(fontsize=22, color='black')
+        plt.ylabel('Value', color='black',fontsize=22)
+        plt.locator_params(axis='x', nbins=8)
+        plt.plot(x,y)
+        plt.savefig('../web/assets/portfolioStandings.png')
+        plt.show()
+        portfolio.to_csv("../web/assets/portfolio.csv", index=False)
+    
+    
         
+
+    def folioDB():
+        conn = sqlite3.connect('folio.db')
+        cur = conn.cursor()
+        cur.execute('''CREATE TABLE IF NOT EXISTS folio (BTCPERP int, holdings int, cash int, total int, returns int, time text)''')
+        folioTable = pd.read_csv('../web/assets/portfolio.csv') # load to DataFrame
+        folioTable.to_sql('orders', conn, if_exists='append', index = False) # write to sqlite table
+
+
+
+
+
+    def regime(df):    
+        imp = SimpleImputer(missing_values=np.nan, strategy='mean')
+        steps = [('imputation', imp),
+                ('scaler',StandardScaler()),
+                ('lasso',Lasso())]        
+
+        pipeline =Pipeline(steps)
+
+
+        parameters = {'lasso__alpha':np.arange(0.0001,10,.0001),
+                    'lasso__max_iter':np.random.uniform(100,100000,4)}
+        from pandas_datareader import data as web
+        from sklearn import mixture as mix
+        import seaborn as sns 
+        import matplotlib.pyplot as plt
+        reg = rcv(pipeline, parameters,cv=5)
+        X=df[['open','high','low','close']]
+        y =df['close']
+        avg_err={}
+        avg_err={}
+        avg_train_err = {}
+        for t in np.arange(50,97,3):
+            get_ipython().magic('reset_selective -f reg1')
+            split = int(t*len(X)/100)
+            reg.fit(X[:split],y[:split])
+            best_alpha = reg.best_params_['lasso__alpha']
+            best_iter = reg.best_params_['lasso__max_iter']
+            reg1 = Lasso(alpha=best_alpha,max_iter=best_iter)
+            X = imp.fit_transform(X,y)
+            reg1.fit(X[:split],y[:split])
+            df['P_C_%i'%t] = 0.
+            df.iloc[:,df.columns.get_loc('P_C_%i'%t)] = reg1.predict(X[:])
+            df['Error_%i'%t] = np.abs(df['P_C_%i'%t]-df['close'])
+            
+            e = np.mean(df['Error_%i'%t][split:])
+            train_e = np.mean(df['Error_%i'%t][:split])
+            avg_err[t] = e
+            avg_train_err[t] = train_e
+
+        plt.rcParams['figure.figsize'] = [4.0, 4.0]
+        fig = plt.figure(facecolor=(1, 1, 1))
+        Range =df['high'][split:]-df['low'][split:]
+        plt.scatter(list(avg_train_err.keys()),list(avg_train_err.values()),label='train_error')
+        plt.legend(loc='best')
+        avgRange = np.average(Range)
+        plt.title(f'Avg Range = %1.2f'%avgRange)
+        plt.savefig('../web/assets/lasso-error.png')
+
+        plt.rcParams['figure.figsize'] = [4.0, 4.0]
+        fig = plt.figure(facecolor=(1, 1, 1))
+        Range =df['high'][split:]-df['low'][split:]
+        # ------------------------------------------------------------------------ added code below.
+        plt.scatter(list(avg_err.keys()),list(avg_err.values()), label='test_error')
+        # ---------------------------------------------------------------------------
+        plt.scatter(list(avg_train_err.keys()),list(avg_train_err.values()),label='train_error')
+        plt.legend(loc='best')
+        avR = np.average(Range)
+        plt.title(f'Avg Range = %1.2f'%avR)
+        plt.savefig('../web/assets/train-test-error.png')
+
+        df=df[['open','high','low','close']]
+        df['open']=df['open'].shift(1)
+        df['high']=df['high'].shift(1)
+        df['low']=df['low'].shift(1)
+        df['close']=df['close'].shift(1)
+        df=df[['open','high','low','close']]
+        df=df.dropna()
+        unsup = mix.GaussianMixture(n_components=3, 
+                                    covariance_type="spherical", 
+                                    n_init=100, 
+                                    random_state=42)
+        unsup.fit(np.reshape(df,(-1,df.shape[1])))
+        regime = unsup.predict(np.reshape(df,(-1,df.shape[1])))
+        df['Return']= np.log(df['close']/df['close'].shift(1))
+        Regimes=pd.DataFrame(regime,columns=['Regime'],index=df.index)\
+                            .join(df, how='inner')\
+                                .assign(market_cu_return=df.Return.cumsum())\
+                                        .reset_index(drop=False)\
+                                                    .rename(columns={'index':'Date'})
+        plt.rcParams['figure.figsize'] = [16.0, 6.0]
+        order=[0,1,2]
+        fig = sns.FacetGrid(data=Regimes,hue='Regime',hue_order=order,aspect=2,height= 4)
+        fig.map(plt.scatter,'Date','market_cu_return', s=4).add_legend(labelcolor='white')
+        plt.tick_params(colors='white', grid_color='black')
+        plt.rcParams['text.color']='w'
+
+        plt.grid()
+        plt.savefig('../web/assets/lasso.png', bbox_inches='tight')
+        plt.show()
+        for i in order:
+            print('Mean for regime %i: '%i,unsup.means_[i][0])
+            print('Co-Variancefor regime %i: '%i,(unsup.covariances_[i]))
