@@ -58,7 +58,7 @@ class Algo():
         plt.axhline(p[0], c=(.5, .5, .5), ls='--')
         plt.axhline(p[2], c=(.5, .5, .5), ls='--')
         plt.axhline(p[-1], c=(.5, .5, .5), ls='--')
-        plt.savefig('../web/assets/rangePercentiles.png')
+        plt.savefig('./assets/rangePercentiles.png')
 
     def plot_positionR(self):
         plt.rcParams['figure.figsize'] = [16.0, 6.0]
@@ -68,7 +68,7 @@ class Algo():
         plt.xticks(fontsize=22)
         plt.yticks(fontsize=22)
         plt.plot(self.iloc[-500:]['position'].dropna())
-        plt.savefig('../web/assets/rangeStatus.png')
+        plt.savefig('./assets/rangeStatus.png')
 
     def market_returnsR(self):
         plt.rcParams['figure.figsize'] = [16.0, 6.0]
@@ -82,7 +82,7 @@ class Algo():
             np.exp(self.iloc[-500:]['range_returns'].dropna()).cumprod(), label='Strategy')
         plt.xticks(rotation=90)
         plt.legend()
-        plt.savefig('../web/assets/rangeRets.png')
+        plt.savefig('./assets/rangeRets.png')
 
 
     def nineM(self):
@@ -94,7 +94,7 @@ class Algo():
         plt.plot(self.iloc[-500:]['close'], label = 'BTC')
         plt.plot(self.iloc[-500:]['9-min'], label = '9-min')
         plt.legend(loc=2);
-        plt.savefig('../web/assets/btc1m9ma.png')
+        plt.savefig('./assets/btc1m9ma.png')
 
     def range_gainz(self):
 
@@ -134,7 +134,7 @@ class Algo():
         plt.plot(self[-500:].loc[self.entry == -2].index, self[-500:]['21-min'][self.entry == -2], "v",
                  color="r", markersize=12, label="Short")
         plt.legend(loc=2)
-        plt.savefig('../web/assets/trendPositions1.png')
+        plt.savefig('./assets/trendPositions1.png')
 
     def plot_gainzT(self):
         plt.rcParams['figure.figsize'] = [16.0, 6.0]
@@ -146,7 +146,7 @@ class Algo():
         plt.plot(np.exp(self.iloc[-500:]['market_returns']).cumprod(),label = "Buy/Hold")
         plt.plot(np.exp(self.iloc[-500:]['trend_returns']).cumprod(),label = "Strat")
         plt.legend()
-        plt.savefig('../web/assets/trendRets.png')
+        plt.savefig('./assets/trendRets.png')
 
     def trend_gainz(self):
 
@@ -167,7 +167,7 @@ class Algo():
         plt.plot(self[-500:].loc[self.entryR == -2].index, self[-500:]['9-min'][self.entryR == -2], "v",
                 color = "g", markersize = 12, label="Long")
         plt.legend(loc=2);
-        plt.savefig('../web/assets/dualPlot.png')
+        plt.savefig('./assets/dualPlot.png')
 
 
 
@@ -364,7 +364,7 @@ class Algo():
         p = portfolio[-1:]
         p.drop(columns=['time'], inplace=True)
         p = p.reset_index(drop=True)
-        p.to_json('../web/templates/portfolio2.json', orient='records')
+        p.to_json('./templates/portfolio2.json', orient='records')
         fig = plt.figure(facecolor=(1, 1, 1))
         x = portfolio.iloc[-200:]['time']
         y = portfolio.iloc[-200:]['total']
@@ -374,9 +374,9 @@ class Algo():
         plt.ylabel('Value', color='black',fontsize=22)
         plt.locator_params(axis='x', nbins=8)
         plt.plot(x,y)
-        plt.savefig('../web/assets/portfolioStandings.png')
+        plt.savefig('./assets/portfolioStandings.png')
         plt.show()
-        portfolio.to_csv("../web/assets/portfolio.csv", index=False)
+        portfolio.to_csv("./assets/portfolio.csv", index=False)
     
     
         
@@ -438,7 +438,7 @@ class Algo():
         plt.legend(loc='best')
         avgRange = np.average(Range)
         plt.title(f'Avg Range = %1.2f'%avgRange)
-        plt.savefig('../web/assets/lasso-error.png')
+        plt.savefig('./assets/lasso-error.png')
 
         plt.rcParams['figure.figsize'] = [4.0, 4.0]
         fig = plt.figure(facecolor=(1, 1, 1))
@@ -450,7 +450,7 @@ class Algo():
         plt.legend(loc='best')
         avR = np.average(Range)
         plt.title(f'Avg Range = %1.2f'%avR)
-        plt.savefig('../web/assets/train-test-error.png')
+        plt.savefig('./assets/train-test-error.png')
 
         df=df[['open','high','low','close']]
         df['open']=df['open'].shift(1)
@@ -479,7 +479,7 @@ class Algo():
         plt.rcParams['text.color']='w'
 
         plt.grid()
-        plt.savefig('../web/assets/lasso.png', bbox_inches='tight')
+        plt.savefig('./assets/lasso.png', bbox_inches='tight')
         plt.show()
         for i in order:
             print('Mean for regime %i: '%i,unsup.means_[i][0])
