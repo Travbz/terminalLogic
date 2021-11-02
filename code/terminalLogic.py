@@ -45,7 +45,7 @@ class Algo():
         self['strat_returnR'] = self['returnsR'] * self['position'].shift()
         return self
 
-    def plot_percentiles(self):
+    def plot_R(self):
         plt.rcParams['figure.figsize'] = [16.0, 6.0]
         """ Plots price percenitles"""
         sb.set()
