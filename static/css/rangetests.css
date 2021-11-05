@@ -1,0 +1,40 @@
+.rangetests {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  padding-bottom: 2rem;
+}
+.range-test {
+  margin-bottom: 8rem;
+}
+
+.range-test h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.range-test_img img {
+  width: 100%;
+}
+footer {
+  padding-top: 0rem !important;
+}
+@media only screen and (max-width: 900px) {
+  .range-test h3 {
+    font-size: 2rem;
+  }
+  .range-test {
+    margin-bottom: 5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .range-test h3 {
+    font-size: 1.5rem;
+  }
+  .range-test {
+    margin-bottom: 3rem;
+  }
+}

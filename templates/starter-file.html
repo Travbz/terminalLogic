@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/global.css">
+    <!-- ADD YOUR CSS -->
+  </head>
+  <body>
+      <header>
+    <a href="../web/dashboard.html" class="logo">terminalLogic</a>
+    <div class="container">
+      <div class="menu-button"></div>
+      <ul class="flexnav" data-breakpoint="800">
+        <li><a href="desk.html">The Desk</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="news.html">News</a></li>
+        <li>
+          <a href="#">Backtesting</a>
+          <ul>
+            <li><a classname="subnav" href="trendtests.html">Visualizing Momentum</a></li>
+            <li><a classname="subnav" href="rangetests.html">Visualizing Mean Reversion</a></li>
+            <li><a classname="subnav" href="ml.html">Machine Learning</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Data</a>
+          <ul>
+            <li><a classname="subnav" href="data.html">BTCPERP-1M</a></li> 
+            <li><a classname="subnav" href="Web-GUI-for-SQLite/Web-GUI-for-SQLite.html">SQLite3</a></li>
+          </ul>
+        </li>
+        <li><a href="api.html">FTX API</a></li>
+        <li><a href="https://ftx.us/trade/BTC/USD" target="_blank" rel="noopener noreferrer" >FTX Official Site</a></li>
+        <li><a href="https://github.com/Travbz?tab=repositories" target="_blank" rel="noopener noreferrer" >Github</a></li>
+      </ul>
+    </div>
+</header>
+<!-- WRITE YOUR CODE HERE -->
+
+
+<!-- WRITE YOUR CODE ABOVE -->
+  </body>
+  <!-- SCRIPTS -->
+  <script src="https://0.s3.envato.com/files/78833207/js/jquery-1.9.0.min.js"></script>
+  <script src="https://0.s3.envato.com/files/78833207/js/jquery.flexnav.js"></script>
+  <script>
+    $(".flexnav").flexNav();
+  </script>
+</html>

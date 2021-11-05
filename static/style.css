@@ -1,0 +1,606 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    width:100%;
+    background-color: black;
+    color:rgb(169, 94, 231)
+    ;
+    font-family:fantasy;
+  }
+
+h2{
+    color:white;
+}
+h3{
+  color:whitesmoke;
+}
+h4{
+  position:absolute;
+  left: 10px;
+  top:10px;
+  color:whitesmoke;
+}
+li{
+  color:whitesmoke
+}
+
+h5{
+  color:turquoise;
+}
+
+.intro{
+  color:turquoise;
+}
+
+p{
+    text-align: center;
+    color: black;
+}
+ 
+.navbar-custom {
+background-color: rgb(169, 94, 231);
+}
+
+.flex-container {
+    display:flex;
+    justify-content: center;
+
+}
+
+
+iframe {
+  margin-top: 0px;
+  width:100%;
+  height:50%;
+}
+
+div.main{
+  position: absolute;
+  width:1350px;
+  top:55px;
+  left:0px;
+  height: 511px;
+  border: 3px solid rgb(169, 94, 231);
+}
+
+div.main2{
+  position: absolute;
+  width:1345px;
+  top:55px;
+  left:0px;
+  height: 511px;
+  border: 3px solid rgb(169, 94, 231);
+}
+div.table {
+  position: absolute;
+  width:500px;
+  top:566px;
+  left:345px;
+  height: 380px;
+  border: 3px solid rgb(169, 94, 231);
+
+} 
+p.trade-header{
+  background-color:rgb(169, 94, 231);
+}
+div.container-2 {
+  position: absolute;
+  width:1345px;
+  top:566px;
+  left:0px;
+  height: 385px;
+  border: 3px solid rgb(169, 94, 231);
+
+} 
+div.trade-history {
+  position: absolute;
+  width:575px;
+  top:566px;
+  left:1345px;
+  height: 385px;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+div.tv-single-ticker-widget{
+  position:absolute;
+  right:100px;
+}
+div.container {
+  position: absolute;
+  width:350px;
+  top:566px;
+  left:0px;
+  height: 380px;
+  border: 3px solid rgb(169, 94, 231);
+
+} 
+
+div.container4 {
+  position: absolute;
+  width:345px;
+  top:566px;
+  left:0px;
+  height: 380px;
+  border: 3px solid rgb(169, 94, 231);
+
+} 
+div.ordermanager {
+  position: absolute;
+  width:575px;
+  top:55px;
+  left:1345px;
+  height: 511px;
+  border: 3px solid rgb(169, 94, 231);
+
+} 
+
+img.current-position{
+  position:absolute;
+  width:1339px;
+  height:355px;
+  left:0px;
+  top:24px;
+}
+
+div.range-test {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:56px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#range-test {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.mean-h3{
+  position:absolute;
+  width:100%;
+  top:58px;
+  left:10px;
+}
+
+div.range-test2 {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:480px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#range-test2 {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.status-h3{
+  position:absolute;
+  width:100%;
+  color:turquoise;
+  top:0px;
+  left:15px;
+}
+
+div.range-test3 {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:480px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#range-test3 {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.retsR-h3{
+  position:absolute;
+  width:100%;
+  color:turquoise;
+  top:0px;
+  left:15px;
+}
+
+div.range-test4 {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:480px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#range-test4 {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.btc1m-h3{
+  position:absolute;
+  width:100%;
+  color:turquoise;
+  top:0px;
+  left:15px;
+}
+
+div.trend-test {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:56px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#trend-test {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.trend-h3{
+  position:absolute;
+  color:turquoise;
+  width:100%;
+  top:58px;
+  left:10px;
+}
+
+div.trend-test2 {
+  position: absolute;
+  width:100%;
+  height:485px;
+  top:540px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#trend-test2 {
+  position: absolute;
+  width:100%;
+  height:450px;
+  top:30px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.trendRets-h3{
+  position:absolute;
+  color:turquoise;
+  width:100%;
+  top:0px;
+  left:15px;
+}
+
+div.ml-text{
+  position: absolute;
+  width:100%;
+  height:200px;
+  top:415px;
+  border: 3px solid rgb(169, 94, 231);
+}
+li.ml-text-list{
+  color:whitesmoke;
+}
+
+div.ml-test {
+  position: absolute;
+  width:100%;
+  height:420px;
+  top:88px;
+  left:0px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#ml-test2 {
+  position: absolute;
+  width:100%;
+  height:640px;
+  top:0px;
+  right:0px;
+  border: 3px solid rgb(169, 94, 231);
+}
+h3.ml-h3{
+  position:absolute;
+  width:100%;
+  top:58px;
+  left:10px;
+}
+
+div.ml-test2 {
+  position: absolute;
+  width:100%;
+  height:645px;
+  top:615px;
+  left:0;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#ml-test {
+  position: absolute;
+  width: 300px;
+  height:300px;
+  top:0px;
+  border: 3px solid rgb(169, 94, 231);
+}
+
+div.ml-error{
+  position:absolute;
+  width:100%;
+  top:20px;
+  left:320px;
+}
+ul.error{
+  position:absolute;
+  width:100%;
+  top:75px;
+  left:20px;
+}
+
+.rets{
+  position: absolute;
+  left:10px;
+  top:450px;
+}
+.architecture {
+  position:absolute;
+  width: 805px;
+  height:830px;
+  top:102px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img#architecture {
+  position:absolute;
+  width: 800px;
+  height:560px;
+  top:265px;
+  border: 3px solid rgb(169, 94, 231);
+}
+
+
+#footer{
+  color:whitesmoke;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+.containerDot {
+	background-size: cover;
+  background: rgb(226,226,226); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
+  padding: 20px;
+}
+
+.led-box {
+  position:absolute;
+  top:400px;
+  left:500px;
+  height: 30px;
+  width: 25%;
+  margin: 10px 0;
+  font-size: 12px;
+  text-align: center;
+  margin: 1em;
+}
+
+
+
+.led-red {
+  position:absolute;
+  bottom:120px;
+  left:702px;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+  -webkit-animation: blinkRed 2s infinite;
+  -moz-animation: blinkRed 2s infinite;
+  -ms-animation: blinkRed 2s infinite;
+  -o-animation: blinkRed 2s infinite;
+  animation: blinkRed 2s infinite;
+}
+
+@-webkit-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-moz-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-ms-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@-o-keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+@keyframes blinkRed {
+    from { background-color: #F00; }
+    50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: #F00; }
+}
+
+.led-yellow {
+  position:absolute;
+  left:536px;
+  top:473px;
+  margin: 0 auto;
+  width: 14px;
+  height: 14px;
+  background-color: #FF0;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+  -webkit-animation: blinkYellow .5s infinite;
+  -moz-animation: blinkYellow .5s infinite;
+  -ms-animation: blinkYellow .5s infinite;
+  -o-animation: blinkYellow .5s infinite;
+  animation: blinkYellow .5s infinite;
+}
+
+@-webkit-keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+@-moz-keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+@-ms-keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+@-o-keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+@keyframes blinkYellow {
+    from { background-color: #FF0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    to { background-color: #FF0; }
+}
+
+.led-green {
+  margin: 0 auto;
+  width: 10px;
+  height: 10px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  animation: blink .1s infinite;
+}
+
+.led-blue {
+  position:absolute;
+  bottom:120px;
+  left:702px;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #24E0FF;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+  animation: blink 2s infinite;
+}
+
+footer{
+  text-align: center;
+  position:absolute;
+  width:100%;
+  bottom:0px;
+  right:0px;
+  background-color: rgb(169, 94, 231);
+
+}
+
+.gistCont{
+  top:55px;
+  width:100%;
+  height:545px;
+  position:absolute;
+  border: 3px solid rgb(169, 94, 231);
+
+
+}
+table#portfolioPerf {
+  position: absolute;
+  width:40%;
+  height:500px;
+  top:65px;
+  left:0;
+  border: 3px solid rgb(169, 94, 231);
+  background-color:rgb(199, 199, 199);
+}
+
+#portfolioPerf {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  color:black;
+  border: 3px solid rgb(169, 94, 231);
+
+}
+
+#portfolioPerf td, #portfolioPerf th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#portfolioPerf tr:nth-child(even){background-color: #f2f2f2;}
+
+#portfolioPerf tr:hover {background-color: #ddd;}
+
+#portfolioPerf th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: turquoise;
+  color: white;
+}
+div.portfolioIMG{
+  position:absolute;
+  background-color:turquoise;
+  width:60%;
+  height:500px;
+  left:40%;
+  top:65px;
+  border: 3px solid rgb(169, 94, 231);
+}
+img.portfolioIMG{
+  position:absolute;
+  background-color:rgb(199, 199, 199);
+  width:100%;
+  height:90.5%;
+  top:48px;
+  right:0px;
+  border: 3px solid rgb(169, 94, 231);
+
+  }
+h6.portfolioH6{
+  position:absolute;
+  left:10px;
+  top:8px;
+  color:whitesmoke;
+  font-size:30px;
+}
+div.zscoreBox{
+  position:absolute;
+  background-color:turquoise;
+  width:100%;
+  height:100px;
+  top:562px;
+  right:0px;
+  border: 3px solid rgb(169, 94, 231);
+}
+
+h4.zscore{
+  position:absolute;
+  right:0px;
+  left:675px;
+  width:450px;
+  height:50px;
+  top:20px;
+
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/rangetests.css">
+  <link rel="stylesheet" href="../static/css/nav.css">
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo_container">
+      <a href="../web/dashboard.html" class="logo">terminalLogic</a>
+    </div>
+    <div class="container">
+      <div class="menu-button"></div>
+      <ul class="flexnav" data-breakpoint="800">
+        <li><a href="desk.html">The Desk</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="news.html">News</a></li>
+        <li>
+          <a href="#">Backtesting</a>
+          <ul>
+            <li><a classname="subnav" href="trendtests.html">Visualizing Momentum</a></li>
+            <li><a classname="subnav" href="rangetests.html">Visualizing Mean Reversion</a></li>
+            <li><a classname="subnav" href="ml.html">Machine Learning</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Data</a>
+          <ul>
+            <li><a classname="subnav" href="data.html">BTCPERP-1M</a></li>
+            <li><a classname="subnav" href="Web-GUI-for-SQLite/Web-GUI-for-SQLite.html">SQLite3</a></li>
+
+          </ul>
+        </li>
+        <li><a href="api.html">FTX API</a></li>
+        <li><a href="https://ftx.us/trade/BTC/USD" target="_blank" rel="noopener noreferrer" >FTX Official Site</a></li>
+        <li><a href="https://github.com/Travbz?tab=repositories" target="_blank" rel="noopener noreferrer" >Github</a></li>
+      </ul>
+    </div>
+</header>
+<!-- NAVBAR Ended -->
+  <main class="rangetests">
+    <div class="range-test">
+      <h3>BTC 1m and a 9min rolling mean</h3>
+      <div class="range-test_img">
+          <img src="../assets/btc1m9ma.png" alt="range percentile">
+      </div>
+    </div>
+    <div class="range-test">
+      <h3>Mean Reversion of BTC on the 1Min (middle line [at y=1.000] is BTC rolling mean..)</h3>
+      <div class="range-test_img">
+          <img src="../assets/rangePercentiles.png" alt="range percentile">
+      </div>
+    </div>
+    <div class="range-test">
+      <h3>Position status: 1 == long, -1 == short</h3>
+      <div class="range-test_img">
+          <img src="../assets/rangeStatus.png" alt="range percentile">
+      </div>
+    </div>
+    <div class="range-test">
+      <h3>Range Algo Market Returns vs Buy/Hold</h3>
+      <div class="range-test_img">
+          <img src="../assets/rangeRets.png" alt="range percentile">
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p id="footer">Travis Bridle</p>
+  </footer>
+      </body>
+        <!-- SCRIPTS -->
+    <script src="https://0.s3.envato.com/files/78833207/js/jquery-1.9.0.min.js"></script>
+    <script src="https://0.s3.envato.com/files/78833207/js/jquery.flexnav.js"></script>
+  <script>
+    $(".flexnav").flexNav();
+  </script>
+
+</html> 
