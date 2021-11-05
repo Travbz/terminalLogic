@@ -27,7 +27,7 @@ minutes_processed = {}
 minute_candlesticks =[]
 current_tick = None
 previous_tick = None 
-connection = sqlite3.connect('analysis3.db')
+connection = sqlite3.connect('ohlc.db')
 cursor = connection.cursor()
 time_done = []
 try:
