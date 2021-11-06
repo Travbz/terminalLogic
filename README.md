@@ -61,7 +61,7 @@ Cloud based derivitives trading engine, partially automated?
 <!-- ROADMAP -->
 ## Roadmap
 
-![](./assets/tldemo.JPG)
+![](./assets/logicanimation.gif)
 
 
 <!-- CONTRIBUTING -->
