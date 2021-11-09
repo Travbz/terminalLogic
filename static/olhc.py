@@ -21,8 +21,8 @@ import sqlite3
 
 
 socket = 'wss://ftx.com/ws/'
-api_key = '13tLs18EEiz6pYp4QD77dM0mkctM1jWPbs1THoDv'
-secret_key = '0qDUuVo59mKew5-v9jcY9Kb79wYbHE-TMk9nf85k'
+api_key = 'your api key here'
+secret_key = 'your secret key'
 minutes_processed = {}
 minute_candlesticks =[]
 current_tick = None
