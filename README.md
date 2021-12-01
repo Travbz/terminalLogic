@@ -29,7 +29,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Cloud based derivitives trading engine, partially automated?
+Cloud based derivitives trading engine, partially automated
 
 *  Connects to FTX exchange via API using Python.  It extracts all market data from designated channels.
 *  Using pandas and numpy, streaming websocket data is prepared/transformed from millisecond tick data to 1 minute OHLC(open, high, low, close)data, converted into a pd.DataFrame before its final migration to a SQLite database.
