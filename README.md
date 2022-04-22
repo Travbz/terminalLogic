@@ -46,14 +46,12 @@ Cloud based derivitives trading engine, partially automated
 
 * Jupyter Notebook
 * SQLite3
-* MS Excel
-* VSC
 * JavaScript
 * Python
 * HTML
 * CSS
 * jquery
-* AWS ec2, s3
+* AWS ec2, s3, aws budgets
 * SKLearn, Numpy, Pandas, and many, many, python libraries.
 * contributions from friends and freelancers
 
@@ -79,6 +77,4 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-* [Jordan](https://github.com/Jbullis29/)
 * [Travis](https://github.com/Travbz/)
-* [Bilal](https://github.com/bilal-23/)
